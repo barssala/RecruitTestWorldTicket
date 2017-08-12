@@ -23,18 +23,9 @@ public class CurrencyExchangeController extends AbstractController {
             return returnError(HttpStatus.BAD_REQUEST, bindingResult.getFieldError().toString());
         }
 
-        Object test = currencyExchangeRateService.calculateCurrencyRate(request);
+        Object reponse = currencyExchangeRateService.calculateCurrencyRate(request);
 
-        //return request.toMap();
-        return test;
+        return reponse;
     }
-
-    @RequestMapping(path = "/test", method = RequestMethod.GET)
-    public String test() {
-        return "This is for testing.";
-    }
-}
-
-interface test extends Repository {
 
 }
